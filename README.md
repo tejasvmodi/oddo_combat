@@ -19,7 +19,7 @@ Welcome to the Odoo Combat! This repository contains the solution for the hackat
 (Provide a brief overview of the solution you have developed. This section will be updated once the problem statements are declared and the solution is implemented.)
 
 ## Technical Stack
-- ** front-end**: flutter
+- **Front-end**: Flutter
 - **Programming Languages**: Java
 - **Framework**: Spring Boot, Spring Security
 - **Database**: MySQL
