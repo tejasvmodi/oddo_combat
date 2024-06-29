@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oddo_combat/Service/registration.dart';
 import 'package:oddo_combat/UI/Authentication/register.dart';
 import 'package:oddo_combat/UI/Resident%20Ui/resident_home.dart';
 
@@ -13,8 +14,8 @@ class _LoginState extends State<Login> {
   final _emailID = TextEditingController();
   bool _showPassword = false;
   final _password = TextEditingController();
-  var selectedrole = 'Resident';
-  List<String> role = ['Resident', 'Garbage Collectors'];
+  var selectedrole = 'RESIDENT';
+  List<String> role = ['RESIDENT', 'COLLECTOR'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,13 +129,8 @@ class _LoginState extends State<Login> {
                         backgroundColor: const MaterialStatePropertyAll(
                             Color.fromARGB(255, 202, 212, 230))),
                     onPressed: () {
-                      if (selectedrole == 'Resident') {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const ResidentHome(),
-                            ));
-                      }
+                      Authenticationservice auth = Authenticationservice();
+                      auth.loginUser(_emailID.text, _password.text, selectedrole);
                     },
                     child: const Text(
                       'Sign In',

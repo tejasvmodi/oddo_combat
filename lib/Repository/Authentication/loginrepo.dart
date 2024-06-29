@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oddo_combat/Exception/auth_exception.dart';
-import 'package:oddo_combat/Model/Authentication/loginmodel.dart';
+import 'package:oddo_combat/Model/loginmodel.dart';
 import 'package:oddo_combat/Model/token_manager.dart';
 import 'package:oddo_combat/UI/Authentication/login.dart';
 import 'package:oddo_combat/UI/Resident%20Ui/resident_home.dart';
@@ -28,7 +28,7 @@ class Loginrepo{
         await prefs.setBool("isLoggedIn", true);
         await TokenManager.saveToken(data['token']);
 
-        Get.offAll(() => const ResidentHome());
+        Get.offAll(() => ResidentHome());
 
         // log(data['token']);
       } else if (response.statusCode == 500) {
