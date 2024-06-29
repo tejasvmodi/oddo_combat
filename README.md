@@ -1,16 +1,31 @@
-# oddo_combat
+# Odoo Combat
 
-A new Flutter project.
+Welcome to the Odoo Combat! This repository contains the solution for the hackathon conducted on 29-6-2024, where we address the problem statements provided by the organizers.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Team Members
 
-A few resources to get you started if this is your first Flutter project:
+- **Smit Joshi**  - [GitHub Profile](https://github.com/smit-joshi814)
+- **Tejasv Modi** - [GitHub Profile](https://github.com/tejasvmodi)
+- **Shreya Acharya** - [GitHub Profile](https://github.com/ShreyaAcharya24)
+- **Yash Mehta** - [GitHub Profile](https://github.com/yash655)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Problem Statement
+1 . Tackling Public Litter: Application for Efficient Garbage Management
+    Creating a full stack application for efficient garbage management to tackle public litter can significantly improve urban cleanliness and resource management
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Solution Overview
+
+(Provide a brief overview of the solution you have developed. This section will be updated once the problem statements are declared and the solution is implemented.)
+
+## Technical Stack
+- ** front-end**: flutter
+- **Programming Languages**: Java
+- **Framework**: Spring Boot, Spring Security
+- **Database**: MySQL
+- **Tools**: Git, Docker
+
+## Contributors
+<a href="https://github.com/tejasvmodi/oddo_combat/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=tejasvmodi/oddo_combat&max=4" />
+</a>
