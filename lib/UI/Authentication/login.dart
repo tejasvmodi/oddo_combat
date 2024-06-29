@@ -11,7 +11,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final _emailID = TextEditingController();
-   bool _showPassword = false;
+  bool _showPassword = false;
   final _password = TextEditingController();
   var selectedrole = 'Resident';
   List<String> role = ['Resident', 'Garbage Collectors'];
@@ -42,29 +42,31 @@ class _LoginState extends State<Login> {
                 TextField(
                   controller: _emailID,
                   decoration: const InputDecoration(
-                      label: Text('Enter Email Id '),
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black))),
+                    label: Text('Enter Email Id '),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                  ),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.03,
                 ),
                 TextField(
-                   obscureText: !_showPassword,
+                  obscureText: !_showPassword,
                   controller: _password,
-                  decoration:  InputDecoration(
-                     suffixIcon: IconButton(
-                          icon: Icon(
-                            _showPassword
-                                ? Icons.visibility
-                                : Icons.visibility_off,
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              _showPassword = !_showPassword;
-                            });
-                          },
+                  decoration: InputDecoration(
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          _showPassword
+                              ? Icons.visibility
+                              : Icons.visibility_off,
                         ),
+                        onPressed: () {
+                          setState(() {
+                            _showPassword = !_showPassword;
+                          });
+                        },
+                      ),
                       label: const Text('Enter Password Id '),
                       border: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.black))),
@@ -76,13 +78,14 @@ class _LoginState extends State<Login> {
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.black),
                     borderRadius: BorderRadius.all(
-                      Radius.elliptical(MediaQuery.of(context).size.width * 0.04,
+                      Radius.elliptical(
+                          MediaQuery.of(context).size.width * 0.04,
                           MediaQuery.of(context).size.width * 0.04),
                     ),
                   ),
                   child: Padding(
-                    padding:
-                        EdgeInsets.all(MediaQuery.of(context).size.width * 0.03),
+                    padding: EdgeInsets.all(
+                        MediaQuery.of(context).size.width * 0.03),
                     child: DropdownButton<String>(
                       alignment: Alignment.bottomLeft,
                       isExpanded: true,
@@ -125,21 +128,31 @@ class _LoginState extends State<Login> {
                         backgroundColor: const MaterialStatePropertyAll(
                             Color.fromARGB(255, 202, 212, 230))),
                     onPressed: () {
-                      if(selectedrole == 'Resident'){
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ResidentHome(),));
-                    }},
+                      if (selectedrole == 'Resident') {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ResidentHome(),
+                            ));
+                      }
+                    },
                     child: const Text(
                       'Sign In',
                       style: TextStyle(color: Colors.black, fontSize: 25),
                     )),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
-                    InkWell(
-                      onTap: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Registration(),));
-                      },
-                      child: const Text("Don't have a account ?"),
-                    
-                    ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.03,
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Registration(),
+                        ));
+                  },
+                  child: const Text("Don't have a account ?"),
+                ),
               ],
             ),
           ),

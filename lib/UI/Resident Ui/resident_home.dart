@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oddo_combat/UI/Resident%20Ui/pickupform.dart';
+import 'package:oddo_combat/UI/Resident%20Ui/reportingsystem.dart';
 
 class ResidentHome extends StatefulWidget {
   const ResidentHome({super.key});
@@ -46,7 +47,9 @@ class _ResidentHomeState extends State<ResidentHome> {
                     Color.fromARGB(255, 202, 212, 230),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Reportingsstem(),));
+                },
                 child: const Text(
                   'Reporting system ',
                   style: TextStyle(color: Colors.black,fontSize: 24),
