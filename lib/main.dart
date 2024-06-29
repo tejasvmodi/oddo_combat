@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:oddo_combat/UI/Authentication/login.dart';
-import 'package:oddo_combat/UI/Resident%20Ui/resident_home.dart';
 
 void main() {
   runApp(const MyApp());
