@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oddo_combat/UI/Authentication/Register.dart';
+import 'package:oddo_combat/UI/Authentication/register.dart';
+import 'package:oddo_combat/UI/Resident%20Ui/resident_home.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -123,7 +124,10 @@ class _LoginState extends State<Login> {
                         ),
                         backgroundColor: const MaterialStatePropertyAll(
                             Color.fromARGB(255, 202, 212, 230))),
-                    onPressed: () {},
+                    onPressed: () {
+                      if(selectedrole == 'Resident'){
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ResidentHome(),));
+                    }},
                     child: const Text(
                       'Sign In',
                       style: TextStyle(color: Colors.black, fontSize: 25),

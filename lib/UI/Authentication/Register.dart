@@ -13,7 +13,7 @@ class _RegistrationState extends State<Registration> {
   bool _confirmshowpassword = false;
 
   var email = TextEditingController();
-  var Password = TextEditingController();
+  var password = TextEditingController();
   var confirmpassword = TextEditingController();
   var phonenumber = TextEditingController();
   var name = TextEditingController();
@@ -65,7 +65,7 @@ class _RegistrationState extends State<Registration> {
                 ),
                 TextField(
                    obscureText: !_showPassword,
-                  controller: Password,
+                  controller: password,
                   decoration: InputDecoration(
                       suffixIcon: IconButton(
                         icon: Icon(
@@ -79,8 +79,8 @@ class _RegistrationState extends State<Registration> {
                           });
                         },
                       ),
-                      label: Text('Enter Password Id '),
-                      border: OutlineInputBorder(
+                      label: const Text('Enter Password Id '),
+                      border: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.black))),
                 ),
                 SizedBox(
@@ -102,8 +102,8 @@ class _RegistrationState extends State<Registration> {
                           });
                         },
                       ),
-                      label: Text('Enter Confirm Password Id '),
-                      border: OutlineInputBorder(
+                      label: const Text('Enter Confirm Password Id '),
+                      border: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.black))),
                 ),
                 SizedBox(
