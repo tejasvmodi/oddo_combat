@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oddo_combat/Util/util.dart';
 
 class PickupForm extends StatefulWidget {
   @override
@@ -28,11 +29,11 @@ class _PickupFormState extends State<PickupForm> {
         child: Center(
           child: Container(
             height: MediaQuery.of(context).size.height * 0.9,
-            width: MediaQuery.of(context).size.width ,
+            width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.02),
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.black),
-             ),
+              border: Border.all(color: Colors.black),
+            ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: ListView(
@@ -165,8 +166,12 @@ class _PickupFormState extends State<PickupForm> {
                         if (_formKey.currentState!.validate()) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(content: Text('Processing Data')),
+                            
                           );
                         }
+                        setState(() {
+                          
+                        });
                       },
                       child: const Text('Submit'),
                     ),

@@ -29,6 +29,11 @@ class Registerrepo {
         final data = jsonDecode(response.body);
         await TokenManager.saveToken(data['token']);
         Get.offAll(() => const Login());
+                showSnackkBar(
+          message: 'Successfully created',
+          title: 'Complete',
+          icon: const Icon(Icons.fork_right),
+        );
       } else {
         Get.offAll(() => const Registration());
         showSnackkBar(

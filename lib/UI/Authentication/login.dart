@@ -129,8 +129,11 @@ class _LoginState extends State<Login> {
                         backgroundColor: const MaterialStatePropertyAll(
                             Color.fromARGB(255, 202, 212, 230))),
                     onPressed: () {
-                      Authenticationservice auth = Authenticationservice();
-                      auth.loginUser(_emailID.text, _password.text, selectedrole);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ResidentHome(),
+                          ));
                     },
                     child: const Text(
                       'Sign In',

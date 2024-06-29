@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 import 'package:image_picker/image_picker.dart';
+import 'package:oddo_combat/Util/util.dart';
 
 class Reportingsstem extends StatefulWidget {
   const Reportingsstem({super.key});
@@ -182,7 +183,13 @@ class _ReportingsstemState extends State<Reportingsstem> {
                       Color.fromARGB(255, 202, 212, 230),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    showSnackkBar(
+                      message: 'Successfully created',
+                      title: 'Noted',
+                      icon: const Icon(Icons.note_add),
+                    );
+                  },
                   child: const Text(
                     'Submit Report ',
                     style: TextStyle(color: Colors.black, fontSize: 24),
