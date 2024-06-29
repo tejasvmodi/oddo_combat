@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:oddo_combat/Service/registration.dart';
 import 'package:oddo_combat/UI/Authentication/login.dart';
 
 class Registration extends StatefulWidget {
@@ -11,21 +14,22 @@ class Registration extends StatefulWidget {
 class _RegistrationState extends State<Registration> {
   bool _showPassword = false;
   bool _confirmshowpassword = false;
-
+  var phonenumber = TextEditingController();
   var email = TextEditingController();
   var password = TextEditingController();
   var confirmpassword = TextEditingController();
-  var phonenumber = TextEditingController();
+  
   var name = TextEditingController();
-  var selectedrole = 'Resident';
-  List<String> role = ['Resident', 'Garbage Collectors'];
+  var selectedrole = 'RESIDENT';
+  List<String> role = ['RESIDENT', 'COLLECTOR'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Container(
           padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.02),
-          height: MediaQuery.of(context).size.height * 0.9,
+          height: MediaQuery.of(context).size.height * 0.97,
           width: MediaQuery.of(context).size.width * 0.9,
           decoration: BoxDecoration(
               border: Border.all(color: Colors.black),
@@ -52,8 +56,18 @@ class _RegistrationState extends State<Registration> {
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.03,
+                ),  TextField(
+                  controller: phonenumber,
+                  decoration: const InputDecoration(
+                      label: Text('Enter Phine number  '),
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black))),
                 ),
-                TextField(
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.03,
+                ),
+                TextField
+                (
                   controller: email,
                   decoration: const InputDecoration(
                       label: Text('Enter Email Id '),
@@ -64,7 +78,7 @@ class _RegistrationState extends State<Registration> {
                   height: MediaQuery.of(context).size.height * 0.03,
                 ),
                 TextField(
-                   obscureText: !_showPassword,
+                  obscureText: !_showPassword,
                   controller: password,
                   decoration: InputDecoration(
                       suffixIcon: IconButton(
@@ -87,7 +101,7 @@ class _RegistrationState extends State<Registration> {
                   height: MediaQuery.of(context).size.height * 0.03,
                 ),
                 TextField(
-                   obscureText: !_confirmshowpassword,
+                  obscureText: !_confirmshowpassword,
                   controller: confirmpassword,
                   decoration: InputDecoration(
                       suffixIcon: IconButton(
@@ -162,7 +176,18 @@ class _RegistrationState extends State<Registration> {
                         ),
                         backgroundColor: const MaterialStatePropertyAll(
                             Color.fromARGB(255, 202, 212, 230))),
-                    onPressed: () {},
+                    onPressed: () {
+                      
+                      if(email.text.contains('@') && email.text.contains('.') && email.text.length >= 6){
+                      if (password.text.trim() == confirmpassword.text.trim()) {
+                        Authenticationservice auth = Authenticationservice();
+                      auth.registerUser(name.text, email.text, password.text, selectedrole,phonenumber.text);
+
+                      log(phonenumber.text);
+                      }
+                      }
+                     setState(() {});
+                    },
                     child: const Text(
                       'Sign Up',
                       style: TextStyle(color: Colors.black, fontSize: 25),
